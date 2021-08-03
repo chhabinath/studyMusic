@@ -1,0 +1,78 @@
+
+body{
+    padding: 0;
+    margin: 0;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:#4d7bff;
+    color: #fff;
+
+}
+ul{
+    display: flex;
+}
+li{
+    list-style: none;
+    margin: 1rem;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+.logo{
+    padding: 1rem;
+}
+
+/* Ham menu  */
+.menu-btn{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+   /* border:3px solid #ffff;*/
+}
+.menu-btn_burger{
+    width: 25px;
+    height: 3px;
+    background: #ffff;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(255,101,47,.2);
+    transition: all .5s ease-in-out;
+}
+.menu-btn_burger::before,
+.menu-btn_burger::after{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background: #ffff;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(255,101,47,.2);
+    transition: all .5s ease-in-out;   
+}
+.menu-btn_burger::before{
+    transform: translateY(-8px);
+}
+.menu-btn_burger::after{
+    transform: translateY(8px);
+}
+/*Animation*/
+
+.menu-btn.open .menu-btn_burger{
+    transform:translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+}
+.menu-btn.open .menu-btn_burger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+}
+.menu-btn.open .menu-btn_burger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+}
